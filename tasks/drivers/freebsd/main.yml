@@ -20,7 +20,7 @@
     - restart_devd
 
 - name: "Ensure 'cuse' kernel module is loaded"
-  ansible.builtin.command: kldload cuse
+  ansible.builtin.command: kldload -n cuse
   become: true
   become_user: root
   notify:
