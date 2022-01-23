@@ -9,10 +9,9 @@
   notify:
     - restart_devd
 
-- name: "Ensure 'webcamd' service is started, and enable it to start at boot"
+- name: "Ensure 'webcamd' service is enabled to start at boot"
   ansible.builtin.service:
     name: webcamd
-    state: started
     enabled: yes
   become: true
   become_user: root
