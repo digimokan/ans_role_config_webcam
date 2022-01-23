@@ -1,4 +1,4 @@
-- name: "Restart devd service"
+- name: "Restart 'devd' dynamic device management service"
   ansible.builtin.service:
     name: devd
     state: restarted
