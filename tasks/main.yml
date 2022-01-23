@@ -1,0 +1,6 @@
+- name: "Install webcam drivers and utilities"
+  ansible.builtin.include_tasks: drivers/main.yml
+
+- name: "Configure webcam users"
+  ansible.builtin.include_tasks: users/main.yml
+
