@@ -23,8 +23,9 @@
   ansible.builtin.command: kldload -n cuse
   become: true
   become_user: root
-  notify:
-    - restart_devd
+  register: loaded
+  changed_when: false
+  failed_when: loaded.rc > 0
 
 - name: "Set 'cuse' kernel module to load at boot in {{ freebsd_loader_conf_path }}"
   community.general.sysrc:
