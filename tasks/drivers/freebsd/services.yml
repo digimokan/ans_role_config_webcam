@@ -1,0 +1,19 @@
+# See pkg-message in https://www.freshports.org/multimedia/webcamd/
+
+- name: "Install the 'webcamd' USB and DVB webcam driver package"
+  ansible.builtin.package:
+    name: webcamd
+    state: present
+  become: true
+  become_user: root
+  notify:
+    - restart_devd
+
+- name: "Ensure 'webcamd' service is enabled to start at boot"
+  ansible.builtin.service:
+    name: webcamd
+    enabled: yes
+  become: true
+  become_user: root
+  notify:
+    - restart_devd

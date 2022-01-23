@@ -1,37 +1,9 @@
-# See pkg-message in https://www.freshports.org/multimedia/webcamd/
+- name: "Install and configure webcam services"
+  ansible.builtin.include_tasks: services.yml
 
-- name: "Install the 'webcamd' USB and DVB webcam driver package"
-  ansible.builtin.package:
-    name: webcamd
-    state: present
-  become: true
-  become_user: root
-  notify:
-    - restart_devd
+- name: "Install and configure webcam kernel modules"
+  ansible.builtin.include_tasks: kernel_mods.yml
 
-- name: "Ensure 'webcamd' service is enabled to start at boot"
-  ansible.builtin.service:
-    name: webcamd
-    enabled: yes
-  become: true
-  become_user: root
-  notify:
-    - restart_devd
-
-- name: "Ensure 'cuse' kernel module is loaded"
-  ansible.builtin.command: kldload -n cuse
-  become: true
-  become_user: root
-  register: loaded
-  changed_when: false
-  failed_when: loaded.rc > 0
-
-- name: "Set 'cuse' kernel module to load at boot in {{ freebsd_loader_conf_path }}"
-  community.general.sysrc:
-    path: "{{ freebsd_loader_conf_path }}"
-    name: "cuse_load"
-    value: "YES"
-    state: present
-  become: true
-  become_user: root
+- name: "Configure video-4-linux compatibility layer"
+  ansible.builtin.include_tasks: video_4_linux.yml
 

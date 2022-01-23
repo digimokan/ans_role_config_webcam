@@ -1,0 +1,21 @@
+# See https://vermaden.wordpress.com/2021/05/26/freebsd-desktop-part-26-configuration-conferencing-and-meetings/
+# NOTE: v4l packages were necessary to see webcam video in OBS
+
+- name: "Install the '{{ pkg_name }}' video-4-linux compatibility package"
+  ansible.builtin.package:
+    name: "{{ pkg_name }}"
+    state: present
+  vars:
+    pkg_name: 'v4l-utils'
+  become: true
+  become_user: root
+
+- name: "Install the '{{ pkg_name }}' video-4-linux compatibility package"
+  ansible.builtin.package:
+    name: "{{ pkg_name }}"
+    state: present
+  vars:
+    pkg_name: 'v4l_compat'
+  become: true
+  become_user: root
+
