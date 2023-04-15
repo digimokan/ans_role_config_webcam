@@ -1,4 +1,0 @@
-- name: "Configure users for FreeBSD"
-  ansible.builtin.include_tasks: freebsd/main.yml
-  when: ansible_os_family == "FreeBSD"
-

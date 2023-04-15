@@ -12,7 +12,6 @@ Configure webcam support.
 * [Quick Start](#quick-start)
     * [Use From Playbook](#use-from-playbook)
 * [Role Options](#role-options)
-* [Role Dependencies](#role-dependencies)
 * [Contributing](#contributing)
 
 ## Purpose
@@ -59,14 +58,6 @@ Configure webcam support.
 See the role `defaults` files, for overridable vars:
 
   * [defaults/main/](../defaults/main/)
-
-Define these _required_ vars for the role:
-
-  * `user_name`: main webcam user
-
-## Role Dependencies
-
-* [ans_role_add_user](https://github.com/digimokan/ans_role_add_user)
 
 ## Contributing
 

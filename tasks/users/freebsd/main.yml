@@ -1,6 +1,0 @@
-- name: "Add user '{{ user_name }}' to group '{{ user_groups }}'"
-  ansible.builtin.include_role:
-    name: ans_role_add_user
-  vars:
-    user_groups: "webcamd"
-
