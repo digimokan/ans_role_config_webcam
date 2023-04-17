@@ -1,0 +1,3 @@
+# webcam group created by running this role (users must belong to this group)
+webcam_group_name: 'webcamd'
+
