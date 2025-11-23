@@ -1,4 +1,4 @@
 - name: "Define export var 'webcam_group_name'"
   ansible.builtin.set_fact:
-    webcam_group_name:: "webcamd"
+    webcam_group_name: "webcamd"
 
