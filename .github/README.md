@@ -55,9 +55,13 @@ Configure webcam support.
 
 ## Role Options
 
-See the role `defaults` files, for overridable vars:
+Vars with default values, which can be overridden in the playbook:
 
-  * [defaults/main/](../defaults/main/)
+  * [overridable](../defaults/main/overridable/)
+
+Vars defined by this role, exported with `public: true`, for use in other roles:
+
+  * [FreeBSD Export Vars](../tasks/freebsd/export_vars.yml)
 
 ## Contributing
 

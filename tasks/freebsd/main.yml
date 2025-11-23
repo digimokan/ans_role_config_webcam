@@ -1,3 +1,6 @@
+- name: "Export vars for other roles to use"
+  ansible.builtin.include_tasks: export_vars.yml
+
 - name: "Install and configure webcam services"
   ansible.builtin.include_tasks: services.yml
 

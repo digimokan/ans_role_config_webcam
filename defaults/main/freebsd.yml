@@ -1,3 +1,0 @@
-# path to loader.conf bootloader config file
-freebsd_loader_conf_path: "/boot/loader.conf"
-
